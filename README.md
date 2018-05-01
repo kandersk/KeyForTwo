@@ -2,6 +2,8 @@
 
 Simple Keylogger application for Mac OS made in C
 
+Currently this displays keystrokes into the running terminal. Will implement an actual log later on.
+
 ## Libraries
 
 Mac OS comes with built in accessibility features that we can use in C just by including a couple libraries.
