@@ -24,9 +24,7 @@ I was able to develop an understanding of the built in Apple API that let's us d
 ## Usage
 
 Clone the repo and within the directory simply type
-```
-sudo make
-```
+`make` to compile and `sudo ./logger` to run `control + C` to quit
 
 ## Issues and other monsters
 
