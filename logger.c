@@ -32,6 +32,8 @@ int main(void){
         exit(1);
     }
 
+  printf("Let's go!\n");
+
   // now let's make this a continuously running application by setting up some looping
   CFRunLoopSourceRef runLoop = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0);
 
@@ -60,25 +62,8 @@ CGEventRef myEventCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef e
   printf("Got key: %s\n", translateKeyCode(keyCode));
   return event;
 }
-/*
-char* translateKeyCode(int keyCode){
-  char* keylist[] = {"a", "s", "d", "f", "h", "g", "z","x", "c", "v", "b", "q", "w", "e", "r", "y", "t", 
-  "1", "2", "3", "4", "6", "5", "=", "9", "7", "-", "8", "0", "]", "o", "u", "[", 
-  "i", "p", "l", "j", "'", "k", ",", "\\", ",", "/", "n", "m", ".", "`", "[decimal]", 
-  "[asterisk]", "[plus]", "[clear]", "[divide]", "[enter]", "[hyphen]", "[equals]", 
-  "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "[return]", "[tab]", " ", "[del]", 
-  "[esc]", "[right-cmd]", "[left-cmd]", "[left-shift]", "[caps]", "[left-option]", 
-  "[left-ctrl]", "[right-shift]", "[right-option]", "[right-ctrl]", "[fn]", "[f17]", 
-  "[volup]", "[voldown]", "[mute]", "[f18]", "[f19]", "[f20]", "[f5]", "[f6]", "[f7]", 
-  "[f3]", "[f8]", "[f9]", "[f11]", "[f13]", "[f16]", "[f14]", "[f10]", "[f12]", "[f15]", 
-  "[help]", "[home]", "[pgup]", "[fwddel]", "[f4]", "[end]", "[f2]", "[pgdown]", "[f1]", 
-  "[left]", "[right]", "[down]", "[up]"};
-  
-  if (keyCode < 0 || keyCode > 126){
-    return "[INVALID BUTTON]";
-  }
-  return keylist[keyCode];
-}*/
+
+// keycodes on macOS seem rather inconsistent. Events.h at the root of the system go a little more indepth on these
 char* translateKeyCode(int keyCode) {
     switch ((int) keyCode) {
         case 0:   return "a";
